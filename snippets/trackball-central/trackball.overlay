@@ -17,7 +17,8 @@
     status = "okay";
     input-processors = 
         <&zip_xy_to_scroll_mapper 
-         &zip_scroll_scaler 1 60>;
+         &zip_scroll_scaler 1 60
+         &zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
     // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &mouse_runtime_input_processor_peripheral>;  
     // input-processors = 
     //         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
