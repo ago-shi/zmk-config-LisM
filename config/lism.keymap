@@ -75,7 +75,7 @@
         td_bs_us: tap_dance_backspace_eisu {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <&kp BSPC>, <&kp JP_EISU>;
         };
         
@@ -119,10 +119,10 @@
         layer_1 {
             display-name = "Mouse Layer";
             bindings = <
-                &trans           &trans             &trans                &trans                  &trans                                                 &kp SPACE    &kp RG(LEFT)     &kp RG(RIGHT)      &mkp MB3            &trans
-                &mkp MB5         &trans             &trans                &trans                  &trans                                                 &kp LG(UP)   &mkp MB1         &mkp MB2           &msc SCRL_UP        &trans
-                &mkp MB4         &trans             &trans                &trans                  &trans                                                 &kp LG(DOWN) &kp LEFT         &kp UP             &kp RIGHT           &trans
-                &trans           &trans             &trans                &trans                  &trans            &trans              &trans           &trans       &trans           &kp DOWN           &trans              &kp LG(W)
+                &trans      &trans    &trans    &trans    &trans                                  &kp SPACE       &kp RG(LEFT)    &mkp MB3    &mkp MB3        &trans
+                &mkp MB5    &trans    &trans    &trans    &trans                                  &kp LG(UP)      &mkp MB1        &mkp MB2    &msc SCRL_UP    &trans
+                &mkp MB4    &trans    &trans    &trans    &trans                                  &kp LG(DOWN)    &kp LEFT        &kp UP      &kp RIGHT       &trans
+                &trans      &trans    &trans    &trans    &trans    &trans              &trans    &trans          &trans          &kp DOWN    &trans          &kp LG(W)
             >;
         };
 
@@ -140,10 +140,10 @@
         layer_3 {
             display-name = "Mark Layer";
             bindings = <
-                &kp EXCLAMATION     &kp JP_DQUOTE      &kp HASH             &kp DOLLAR          &kp PERCENT                                             &kp JP_AMPERSAND    &kp JP_QUOTE    &kp JP_LPAREN      &kp JP_RPAREN       &kp MINUS
-                &kp JP_COLON        &kp JP_QUOTE       &kp EXCLAMATION      &kp SLASH           &kp JP_PLUS                                             &kp JP_PIPE         &kp JP_AT       &kp JP_LBRACKET    &kp JP_RBRACKET     &kp JP_UNDERSCORE
-                &kp SEMICOLON       &kp JP_BACKQUOTE   &kp QUESTION         &kp INT_RO          &kp JP_ASTERISK                                         &kp JP_EQUAL        &kp JP_YEN      &kp LESS_THAN      &kp GREATER_THAN    &kp JP_TILDE
-                &none               &none              &none                &none               &trans              &trans                  &trans      &trans              &none           &kp JP_LBRACE      &kp JP_RBRACE       &kp JP_CARET
+                &kp EXCLAMATION   &kp JP_DQUOTE      &kp HASH           &kp DOLLAR    &kp PERCENT                                       &kp JP_AMPERSAND    &kp JP_QUOTE    &kp JP_LPAREN     &kp JP_RPAREN       &kp MINUS
+                &kp JP_COLON      &kp JP_QUOTE       &kp EXCLAMATION    &kp SLASH     &kp JP_PLUS                                       &kp JP_PIPE         &kp JP_AT       &kp JP_LBRACKET   &kp JP_RBRACKET     &kp JP_UNDERSCORE
+                &kp SEMICOLON     &kp JP_BACKQUOTE   &kp QUESTION       &kp INT_RO    &kp JP_ASTERISK                                   &kp JP_EQUAL        &kp JP_YEN      &kp LESS_THAN     &kp GREATER_THAN    &kp JP_TILDE
+                &none             &none              &none              &none         &trans              &trans              &trans    &trans              &none           &kp JP_LBRACE     &kp JP_RBRACE       &kp JP_CARET
             >;
         };
 
@@ -160,10 +160,10 @@
         layer_5 {
             display-name = "Function Layer";
             bindings = <
-                &kp F1      &kp F2            &kp F3               &kp F4                  &kp F5                                                 &kp F6      &kp F7           &kp F8             &kp F9              &kp F12
-                &none       &kp HOME          &kp PG_UP            &kp END                 &none                                                  &none       &trans           &trans             &trans              &kp RC(RS(ESC))
-                &none       &none             &kp PG_DN            &none                   &none                                                  &none       &trans           &trans             &trans              &kp RC(RA(DEL))
-                &none       &none             &none                &trans                  &trans            &trans              &trans           &trans      &trans           &trans             &trans              &kp RG(L)
+                &kp F1    &kp F2          &kp F3      &kp F4    &kp F5                                  &kp F6    &kp F7    &kp F8    &kp F9    &kp F12
+                &none     &kp HOME        &kp PG_UP   &kp END   &none                                   &none     &trans    &trans    &trans    &kp RC(RS(ESC))
+                &none     &none           &kp PG_DN   &none     &none                                   &none     &trans    &trans    &trans    &kp RC(RA(DEL))
+                &none     &kp LS(PSCRN)   &kp PSCRN   &trans    &trans    &trans              &trans    &trans    &trans    &trans    &trans    &kp RG(L)
             >;
         };
 
