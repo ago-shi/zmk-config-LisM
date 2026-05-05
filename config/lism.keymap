@@ -65,6 +65,11 @@
             key-positions = <12 13>;
             bindings = <&kp JP_EISU>;
         };
+        combo_JP_HANZEN {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp JP_HANZEN>;
+        };
     };
 
     behaviors {
