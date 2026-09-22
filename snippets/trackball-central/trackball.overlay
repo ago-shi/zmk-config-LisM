@@ -1,4 +1,6 @@
 #include "../lism-input-processors.dtsi"
+#include <input/processors/runtime-input-processor.dtsi>
+#include <dt-bindings/zmk/runtime_input_processor.h>
 
 / {
     chosen {
@@ -34,11 +36,29 @@
     device = <&trackball_central>;
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) 
-         &mouse_runtime_input_processor_central>;
+         &mouse_runtime_input_processor_central 
+         &zip_xy_scaler 1 2>;
+
+    scroller {
+        layers = <5>;
+        input-processors =
+            <&scroll_runtime_input_processor
+             &zip_scroll_scaler 1 70
+             &zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
+    };
 };
 
 &scroll_runtime_input_processor {
         x-codes = <INPUT_REL_X>;
 		y-codes = <INPUT_REL_Y>;
 		xy-to-scroll-enabled;
+
+		// モジュール側デフォルトの scale-divisor=60 を打ち消す
+		// (実際のスケールはチェーン後段の zip_scroll_scaler に任せる)
+		scale-multiplier = <1>;
+		scale-divisor = <1>;
+
+		// 横方向の動きを無視し、縦スクロールのみに固定する
+		axis-snap-mode = <AXIS_SNAP_MODE_Y>;
+		axis-snap-threshold = <30000>;
 };
